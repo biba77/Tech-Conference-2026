@@ -10,10 +10,10 @@
   --border:      #e0e3f0;   /* Input and card border color                  */
   --shadow:      0 4px 24px rgba(30, 40, 200, 0.10);
   --radius:      12px;
-  --font-head:   'Syne', sans-serif;    /* Add to index.html <head> via Google Fonts */
-  --font-body:   'DM Sans', sans-serif; /* Add to index.html <head> via Google Fonts */
+  --font-head:   'Syne', sans-serif;   
+  --font-body:   'DM Sans', sans-serif; 
 
-  /* Make the host element behave like a block so it fills the page */
+  
   display: block;
   font-family: var(--font-body);
   color: var(--text-dark);
@@ -41,7 +41,7 @@ nav {
   flex-wrap: wrap; /* Allows nav items to wrap on small screens */
 }
 
-/* Logo container — flex row so icon and text sit side by side */
+
 .nav-logo {
   display: flex;
   align-items: center;
@@ -49,7 +49,6 @@ nav {
   text-decoration: none;
 }
 
-/* Square badge that holds the logo image */
 .nav-logo-icon {
   width: 45px;
   height: 45px;
@@ -60,7 +59,6 @@ nav {
   overflow: hidden; 
 }
 
-/* Logo image fills the badge */
 .nav-logo-icon img {
   width: 100%;
   height: 100%;
@@ -123,7 +121,7 @@ nav {
   color: var(--blue-dark);
 }
 
-/* hides the checkbox input used for toggling the mobile menu — we only want to show the hamburger icon, not the actual checkbox */
+/* hides the checkbox input used for toggling the mobile menu */
 .nav-toggle-input {
   display: none;
 }
@@ -714,7 +712,7 @@ footer {
     grid-template-columns: 1fr; /* Stack photo below detail columns */
   }
  
-  /* Detail columns: 3 cols → 1 col stacked */
+
   .detail-cols {
     grid-template-columns: 1fr;
     gap: 20px;
