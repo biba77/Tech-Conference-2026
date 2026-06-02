@@ -1,0 +1,212 @@
+<nav> 
+  <a href = "#" class = "nav-logo">
+    <div class = "nav-logo-icon"> 
+      <img src = "assets/icons/logo.png" alt = "Tech Conf Logo">
+    </div>
+    <div class = "nav-logo-text">
+      <span>Tech Conference</span>
+      <span>2026</span>
+    </div>
+  </a>
+
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input" />
+  <label for="nav-toggle" class="nav-hamburger" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
+  <ul class = "nav-links">
+    <li><a href = "#">About</a></li>
+    <li><a href = "#">Speakers</a></li>
+    <li><a href = "#">Agenda</a></li>
+    <li><a href = "#">Venue</a></li>
+    <li><a href = "#">Sponsors</a></li>
+  </ul>
+  <button class = "btn-nav">RSVP Now</button>
+</nav>
+
+<section class = "hero">
+  <div class = "hero-left">
+    <div class = "hero-badge">
+      <span class = "hero-badge-dot">
+        <img src = "assets/icons/energy.png" alt = "energy icon">
+      </span>
+      Innovation . Technology . Networking
+    </div>
+
+    <h1 class = "hero-title">Tech Conference</h1>
+    <span class = "hero-title-year"> 2026 </span>
+
+    <p class = "hero-description">
+      Join industry leaders, innovators, and tech enthusiasts to explore the future technology.
+    </p>
+
+    <div class = "hero-divider"></div>
+    <div class = "hero-info"> 
+      <div class = "hero-info-item">
+        <div class = "hero-info-icon">
+          <img src = "assets/icons/calendar.png" alt = "calendar icon">
+        </div>
+        May 15-17, 2026
+      </div>
+
+      <div class = "hero-info-item">
+        <div class = "hero-info-icon">
+          <img src = "assets/icons/location.png" alt = "Location">
+        </div>
+        Cairo, Egypt
+      </div>
+
+    <div class = "hero-info-item">
+      <div class = "hero-info-icon">
+        <img src = "assets/icons/attendees.png" alt = "Attendees">
+      </div>
+      1000+ Attendees
+    </div>
+  </div>
+</div>
+
+ <div class="rsvp-card">
+    <h2>RSVP for Your Spot</h2>
+    <p>Fill out the form below to secure your spot.</p>
+ 
+  <!-- Form grid -->  
+   <form #rsvpForm="ngForm" (ngSubmit)="onSubmit(rsvpForm)">
+    <div class="form-grid">
+ 
+      <!-- Row 1: Full Name | Email -->
+      <div class="form-group">
+        <label for="fullName">Full Name <span class="required">*</span> </label>
+        <input id="fullName" type="text" placeholder="Enter your full name" 
+          [(ngModel)]="name" name="fullName" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address <span class="required">*</span></label>
+        <input id="email" type="email" placeholder="Enter your email" 
+          [(ngModel)]="email" name="email" required email #emailInput="ngModel" />
+        <small class="error-text" *ngIf="emailInput.invalid && emailInput.touched">
+          Please enter a valid email address.
+        </small>
+      </div>
+ 
+      <!-- Row 2: University — spans both columns via .form-full -->
+      <div class="form-group form-full">
+        <label for="org">University / Organization <span class="required">*</span> </label>
+        <input id="org" type="text" placeholder="Enter your university or organization" [(ngModel)]="university" name="university" required />
+      </div>
+ 
+      <!-- Row 3: Phone | Interest Area -->
+      <div class="form-group">
+        <label for="phone">Phone Number <span class="required">*</span></label>
+        <input id="phone" type="tel" placeholder="Enter your phone number"
+          [(ngModel)]="phone" name="phone" required pattern="^[0-9]{10,15}$" #phoneInput="ngModel" />
+        <small class="error-text" *ngIf="phoneInput.invalid && phoneInput.touched">
+          Phone must be 10 to 15 digits, numbers only.
+        </small>
+      </div>    
+      <div class="form-group">
+        <label for="interest">Interest Area</label>
+        <input id="interest" type="text" placeholder="e.g. AI, Cybersecurity, Cloud" [(ngModel)]="interest" name="interest" />
+      </div>
+    </div>
+    <button class="btn-rsvp" [disabled]="rsvpForm.invalid">RSVP Now</button>
+    </form>
+
+    <p class = "rsvp-privacy">
+      <img src = "assets/icons/lock.png" alt = "secure" class = "privacy-icon">
+      Your information is secure with us. We respect your privacy.
+    </p>
+  </div>
+</section>
+
+<section class = "why-attend">
+  <h2 class = "section-title">Why Attend?</h2>
+  <div class = "section-underline"></div>
+
+  <div class = "cards-row"> 
+    
+    <div class = "card">
+      <div class = "card-icon">
+        <img src = "assets/icons/speakers.png" alt = "Expert speakers"/>
+      </div>
+      <h3>Expert Speakers</h3>
+      <p>Learn from industry leaders and tech pioneers.</p>
+    </div>
+
+    <div class = "card">
+      <div class = "card-icon">
+        <img src = "assets/icons/workshops.png" alt = "Hands-on Workshops"/>
+      </div>
+      <h3>Hands-on Workshops</h3>
+      <p>Participate in interactive sessions to learn new skills and technologies.</p>
+    </div>
+
+    <div class = "card">
+      <div class = "card-icon">
+        <img src = "assets/icons/networking.png" alt = "Networking">
+      </div>
+      <h3>Networking Opportunities</h3>
+      <p>Connect with professionals, entrepreneurs, and fellow tech enthusiasts.</p>
+    </div>
+    
+    <div class = "card">
+      <div class = "card-icon">
+        <img src = "assets/icons/perks.png" alt = "Exclusive Perks">
+      </div>
+      <h3>Exclusive Perks</h3>
+      <p>Enjoy special benefits and opportunities available only to conference attendees.</p>
+    </div>
+  </div>
+</section>
+
+<section class = "event-details">
+  <h2 class = "section-title">Event Details</h2>
+  <div class = "section-underline"></div>
+
+  <div class = "event-details-inner">
+    <div class = "detail-cols">
+      <div class = "detail-col">
+        <div class = "detail-icon">
+          <img src = "assets/icons/calendar2.png" alt = "When">
+        </div>
+        <div>
+          <div class ="detail-label">When</div>
+          <div class = "detail-text">May 15-17, 2026 <br /> 9:00AM - 5:00 PM </div>
+          </div>
+        </div>
+        <div class = "detail-col">
+          <div class = "detail-icon">
+            <img src = "assets/icons/location2.png" alt = "Where">
+          </div>
+          <div>
+            <div class = "detail-label">Where</div>
+            <div class = "detail-text">Cairo International Convention Center, Egypt</div>
+          </div>
+        </div>
+
+        <div class = "detail-col">
+          <div class = "detail-icon">
+            <img src = "assets/icons/attendees2.png" alt = "Who">
+          </div>
+          <div>
+            <div class = "detail-label">Who Should Attend?</div>
+            <div class = "detail-text">Tech professionals, students, entrepreneurs, and anyone passionate about technology.</div>
+          </div>
+        </div>
+      </div>
+      <img 
+        src = "assets/images/venue.jpg" 
+        alt= "Cairo International Convention Center - Venue Photo" 
+        class = "venue-img"
+      />
+    </div>
+</section>
+
+<footer>
+  <div class="footer-left">
+    <img src="assets/icons/globe.png" alt="globe" class="footer-globe" />
+    <span>Be part of the future. Learn. Connect. Innovate.</span>
+  </div>
+  <span>© 2026 Tech Conference. All rights reserved.</span>
+</footer>
